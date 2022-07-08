@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { useState, useEffect } from "react";
+
+import Card from "./components/Card";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_APIKEY}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        setMovies(response.results);
+        setIsLoading(false);
+      });
+  }, []);
+
+  console.log(movies);
+
+  if (isLoading) return <h2>En cours de chargement...</h2>;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {movies.map((movie) => {
+        return <Card key={movie.id} movie={movie} />;
+      })}
     </div>
   );
 }
