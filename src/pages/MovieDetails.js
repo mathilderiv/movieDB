@@ -26,7 +26,7 @@ function MovieDetails() {
 
   if (isLoading) return <h2>En cours de chargement...</h2>;
   return (
-    <>
+    <div className="movie-card">
       <div className="title">
         <h2>{movie.title}</h2>
         <p>
@@ -39,13 +39,17 @@ function MovieDetails() {
           alt={movie.title}
           src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
         />
-      </div>
-      <div className="main">
         <p>{movie.overview}</p>
-        <p>{movie.original_language}</p>
-        <p>{movie.release_date}</p>
+        <div className="bottom-title">
+          <p>
+            Original language : {movie.original_language}{" "}
+            <span style={{ marginLeft: "1 rem" }}>
+              Release date : {movie.release_date}
+            </span>
+          </p>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
