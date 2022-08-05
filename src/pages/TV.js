@@ -21,10 +21,12 @@ function TV() {
 
   if (isLoading) return <h2>En cours de chargement...</h2>;
   return (
-    <div>
-      {tvShows.map((tv) => {
-        return <TvCard key={tv.id} tv={tv} />;
-      })}
+    <div className="container">
+      <div className="row">
+        {tvShows.map((tv) => {
+          return <TvCard key={tv.id} tv={tv} />;
+        })}
+      </div>
     </div>
   );
 }

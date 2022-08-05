@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function TvCard({ tv }) {
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card col-12 col-md-4 col-lg-3">
       <img
         src={`https://image.tmdb.org/t/p/w300${tv.poster_path}`}
         className="card-img-top"

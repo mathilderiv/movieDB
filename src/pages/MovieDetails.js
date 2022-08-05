@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import DisplayStars from "../components/DisplayStars";
+
 function MovieDetails() {
   const params = useParams();
   //   console.log(params);
@@ -16,14 +18,35 @@ function MovieDetails() {
         return request.json();
       })
       .then((response) => {
-        // console.log(response);
+        console.log(response);
         setMovie(response);
         setIsLoading(false);
       });
   }, []);
 
   if (isLoading) return <h2>En cours de chargement...</h2>;
-  return <div>{movie.title}</div>;
+  return (
+    <>
+      <div className="title">
+        <h2>{movie.title}</h2>
+        <p>
+          {DisplayStars(movie.vote_average)}{" "}
+          <span>{movie.vote_count} reviews</span>
+        </p>
+      </div>
+      <div className="image">
+        <img
+          alt={movie.title}
+          src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+        />
+      </div>
+      <div className="main">
+        <p>{movie.overview}</p>
+        <p>{movie.original_language}</p>
+        <p>{movie.release_date}</p>
+      </div>
+    </>
+  );
 }
 
 export default MovieDetails;
