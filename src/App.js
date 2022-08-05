@@ -1,36 +1,25 @@
 import "./App.css";
 
-import { useState, useEffect } from "react";
-
-import Card from "./components/Card";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import MovieDetails from "./pages/MovieDetails";
+import TV from "./pages/TV";
+import TvDetails from "./pages/TvDetails";
+import NavBar from "./components/NavBar";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_APIKEY}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        setMovies(response.results);
-        setIsLoading(false);
-      });
-  }, []);
-
-  console.log(movies);
-
-  if (isLoading) return <h2>En cours de chargement...</h2>;
-
   return (
-    <div className="App">
-      {movies.map((movie) => {
-        return <Card key={movie.id} movie={movie} />;
-      })}
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/tv" element={<TV />} />
+        <Route path="/tv/:id" element={<TvDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
