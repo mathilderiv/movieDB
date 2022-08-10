@@ -34,6 +34,14 @@ function PersonCard({ person }) {
               alt={person.known_for[2].original_title}
             />
           ) : null}
+
+          {person.known_for[3] ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w300${person.known_for[3].poster_path}`}
+              className="card-img-top"
+              alt={person.known_for[2].original_title}
+            />
+          ) : null}
         </div>
 
         <p className="card-text"></p>

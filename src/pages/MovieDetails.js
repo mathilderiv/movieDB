@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import DisplayStars from "../components/DisplayStars";
-import BorderExample from "../components/Spiner";
+import Spinner from "../components/Spiner";
 
 function MovieDetails() {
   const params = useParams();
@@ -25,7 +25,7 @@ function MovieDetails() {
       });
   }, []);
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <Spinner />;
   return (
     <div className="movie-card">
       <div className="title">
