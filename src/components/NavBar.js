@@ -39,7 +39,7 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/person">
-                Person
+                People
               </Link>
             </li>
           </ul>

@@ -7,8 +7,8 @@ import MovieDetails from "./pages/MovieDetails";
 import TV from "./pages/TV";
 import TvDetails from "./pages/TvDetails";
 import NavBar from "./components/NavBar";
-import Person from "./pages/Person";
-import PersonDetails from "./pages/PersonDetails";
+import People from "./pages/People";
+import PeopleDetails from "./pages/PeopleDetails";
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/tv" element={<TV />} />
         <Route path="/tv/:id" element={<TvDetails />} />
-        <Route path="/person" element={<Person />} />
-        <Route path="/person/:id" element={<PersonDetails />} />
+        <Route path="/person" element={<People />} />
+        <Route path="/person/:id" element={<PeopleDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

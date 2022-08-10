@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Spinner from "../components/Spiner";
-import PersonCard from "../components/PersonCard";
+import PeopleCard from "../components/PeopleCard";
 
 function Person() {
   const [persons, setPersons] = useState([]);
@@ -13,7 +13,7 @@ function Person() {
         return request.json();
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setPersons(response.results);
         setIsLoading(false);
       });
@@ -24,7 +24,7 @@ function Person() {
     <div className="container">
       <div className="row">
         {persons.map((person) => {
-          return <PersonCard key={person.id} person={person} />;
+          return <PeopleCard key={person.id} person={person} />;
         })}
       </div>
     </div>

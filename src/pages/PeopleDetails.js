@@ -20,38 +20,17 @@ function PersonDetails() {
         return request.json();
       })
       .then((response) => {
-        console.log(response);
-        // setPerson(response);
-        // setIsLoading(false);
+        console.log(response); //ok
+        setPerson(response);
+        setIsLoading(false);
       });
   }, []);
 
   if (isLoading) return <Spinner />;
   return (
     <div className="movie-card">
-      {/* <div className="title">
-    <h2>{movie.title}</h2>
-    <p>
-      {DisplayStars(movie.vote_average)}{" "}
-      <span>{movie.vote_count} reviews</span>
-    </p>
-  </div>
-  <div className="image">
-    <img
-      alt={movie.title}
-      src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-    />
-    <p>{movie.overview}</p>
-
-    <div className="bottom-title">
-      <p>
-        Original language : {movie.original_language}{" "}
-        <span style={{ marginLeft: "1 rem" }}>
-          Release date : {movie.release_date}
-        </span>
-      </p>
-    </div>
-  </div> */}
+      <p>{person.name}</p>
+      <div className="title"></div>
     </div>
   );
 }

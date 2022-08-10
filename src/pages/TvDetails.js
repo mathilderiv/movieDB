@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import Spinner from "../components/Spiner";
+
 function TvDetails() {
   const params = useParams();
 
@@ -21,7 +23,7 @@ function TvDetails() {
       });
   }, []);
 
-  if (isLoading) return <h2>En cours de chargement...</h2>;
+  if (isLoading) return <Spinner />;
   return <div>{tv.name}</div>;
 }
 
