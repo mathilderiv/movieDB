@@ -27,13 +27,13 @@ function PersonCard({ person }) {
             alt={person.known_for[1].original_title}
           />
 
-          {/* {person.known_for[2].poster_path ? (
+          {person.known_for[2] ? (
             <img
               src={`https://image.tmdb.org/t/p/w300${person.known_for[2].poster_path}`}
               className="card-img-top"
               alt={person.known_for[2].original_title}
             />
-          ) : null} */}
+          ) : null}
         </div>
 
         <p className="card-text"></p>
