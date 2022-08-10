@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import DisplayStars from "../components/DisplayStars";
+import BorderExample from "../components/Spiner";
 
 function MovieDetails() {
   const params = useParams();
@@ -24,7 +25,7 @@ function MovieDetails() {
       });
   }, []);
 
-  if (isLoading) return <h2>En cours de chargement...</h2>;
+  if (isLoading) return <h2>Loading...</h2>;
   return (
     <div className="movie-card">
       <div className="title">
@@ -40,6 +41,7 @@ function MovieDetails() {
           src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
         />
         <p>{movie.overview}</p>
+
         <div className="bottom-title">
           <p>
             Original language : {movie.original_language}{" "}
