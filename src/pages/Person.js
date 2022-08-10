@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
-import TvCard from "../components/TvCard";
 import Spinner from "../components/Spiner";
+import PersonCard from "../components/PersonCard";
 
-function TV() {
-  const [tvShows, setTvShows] = useState([]);
+function Person() {
+  const [persons, setPersons] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_APIKEY}&page=1`
-    )
+    fetch(`
+    https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_APIKEY}`)
       .then((request) => {
         return request.json();
       })
       .then((response) => {
-        // console.log(response);
-        setTvShows(response.results);
+        console.log(response);
+        setPersons(response.results);
         setIsLoading(false);
       });
   }, []);
@@ -24,12 +23,12 @@ function TV() {
   return (
     <div className="container">
       <div className="row">
-        {tvShows.map((tv) => {
-          return <TvCard key={tv.id} tv={tv} />;
+        {persons.map((person) => {
+          return <PersonCard key={person.id} person={person} />;
         })}
       </div>
     </div>
   );
 }
 
-export default TV;
+export default Person;

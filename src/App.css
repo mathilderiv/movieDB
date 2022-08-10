@@ -6,6 +6,8 @@
   font-size: 3rem;
 }
 
+/* CARD */
+
 .movie-card {
   width: 100vw;
   height: 100svh;
@@ -44,4 +46,44 @@
 
 .card-text p {
   font-size: 10px;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* PERSON CARD */
+
+.known-for {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  overflow-x: scroll;
+
+  /* Pour IE et Edge  */
+  -ms-overflow-style: none;
+  /* Pour Firefox */
+  scrollbar-width: none;
+}
+
+.known-for::-webkit-scrollbar {
+  display: none;
+}
+
+.known-for img {
+  flex-shrink: 0;
 }

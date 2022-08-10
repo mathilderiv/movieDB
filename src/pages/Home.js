@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Card from "../components/Card";
+import Spinner from "../components/Spiner";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -21,7 +22,7 @@ function Home() {
 
   console.log(movies);
 
-  if (isLoading) return <h2>En cours de chargement...</h2>;
+  if (isLoading) return <Spinner />;
 
   return (
     <div className="container">

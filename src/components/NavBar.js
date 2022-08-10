@@ -7,7 +7,7 @@ function NavBar() {
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="#">
-          Movie/Tv Show
+          Menu
         </Link>
         <button
           className="navbar-toggler"
@@ -35,6 +35,11 @@ function NavBar() {
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Movie
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/person">
+                Person
               </Link>
             </li>
           </ul>
