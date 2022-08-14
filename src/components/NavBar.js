@@ -4,11 +4,18 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav
+      className="navbar navbar-expand-lg"
+      style={{
+        backgroundColor: "#2f4f4f",
+        height: "5rem",
+        marginBottom: "2%",
+      }}
+    >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="#">
+        {/* <Link className="navbar-brand" to="#">
           Menu
-        </Link>
+        </Link> */}
         <button
           className="navbar-toggler"
           type="button"

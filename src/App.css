@@ -4,37 +4,15 @@
 
 .title h2 {
   font-size: 3rem;
+  color: #2f4f4f;
 }
 
 /* CARD */
 
-.movie-card {
-  width: 100vw;
-  height: 100svh;
-  text-align: center;
-}
-
-.bottom-title {
-  /* display: flex; */
-  justify-content: center;
-}
-
-.image {
-  margin-top: 2%;
-  display: flex;
-
-  width: 50vw;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin-left: 25%;
-  margin-top: 2%;
-}
-
 .card-text {
   height: 75%;
   display: -webkit-box;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 12;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -42,8 +20,6 @@
 }
 
 .card-body {
-  margin-right: 1rem;
-  margin-left: 1rem;
   text-align: center;
 }
 
@@ -51,6 +27,9 @@
   color: #2f4f4f;
   font-weight: bold;
   font-size: 20px;
+
+  height: 10%;
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -67,7 +46,7 @@
 /* SPINNER  */
 .loader {
   border: 10px solid #f3f3f3;
-  border-top: 10px solid #3498db;
+  border-top: 10px solid #008080;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -81,6 +60,32 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* MOVIE DETAILS  */
+
+.movie-card {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.image {
+  display: flex;
+  margin-top: 2%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.image img {
+  width: 20%;
+  border-radius: 5%;
+}
+.movie-overview {
+  width: 40%;
+  padding: 10% 5%;
+  color: #008080;
 }
 
 /* PERSON CARD */
@@ -103,4 +108,18 @@
 
 .known-for img {
   flex-shrink: 0;
+}
+
+/* 
+NAV BAR */
+
+.nav-item {
+  color: #2f4f4f;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.nav-item :hover {
+  color: white;
+  font-size: larger;
 }
