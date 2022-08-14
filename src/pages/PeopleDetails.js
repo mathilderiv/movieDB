@@ -20,7 +20,7 @@ function PersonDetails() {
         return request.json();
       })
       .then((response) => {
-        console.log(response); //ok
+        // console.log(response);
         setPerson(response);
         setIsLoading(false);
       });
@@ -30,7 +30,12 @@ function PersonDetails() {
   return (
     <div className="movie-card">
       <p>{person.name}</p>
-      <div className="title"></div>
+      <img src={`https://image.tmdb.org/t/p/w300${person.profile_path}`} />
+      <div className="title">
+        <p>Date of birth : {person.birthday}</p>
+        <p>Place of birth : {person.place_of_birth}</p>
+        <p>{person.biography}</p>
+      </div>
     </div>
   );
 }

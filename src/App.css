@@ -14,10 +14,6 @@
   text-align: center;
 }
 
-.title {
-  border: solid 2px violet;
-}
-
 .bottom-title {
   /* display: flex; */
   justify-content: center;
@@ -26,7 +22,7 @@
 .image {
   margin-top: 2%;
   display: flex;
-  border: solid 1px green;
+
   width: 50vw;
   text-align: center;
   justify-content: center;
@@ -42,12 +38,33 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #2f4f4f;
 }
 
-.card-text p {
-  font-size: 10px;
+.card-body {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  text-align: center;
 }
 
+.card-title {
+  color: #2f4f4f;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btn {
+  background-color: #2f4f4f;
+  border: #2f4f4f;
+  transition-duration: 0.4s;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #008080;
+  color: white;
+}
+/* SPINNER  */
 .loader {
   border: 10px solid #f3f3f3;
   border-top: 10px solid #3498db;
